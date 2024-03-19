@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/695353e645af4f84bc20012dc0908112/artifacts
+end_time: 1710787551718
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 695353e645af4f84bc20012dc0908112
+run_name: intrigued-perch-97
+run_uuid: 695353e645af4f84bc20012dc0908112
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1710787535986
+status: 3
+tags: []
+user_id: HP
