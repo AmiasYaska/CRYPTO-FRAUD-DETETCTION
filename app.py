@@ -1,5 +1,6 @@
-from typing import List, Optional, Union
+from typing import List, Optional
 
+from _ctypes import Union
 from flask import Flask, request, jsonify
 import joblib
 import pandas as pd
@@ -90,4 +91,5 @@ def predict():
         return jsonify({'error': str(e)}), 400
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    # Run the app in production mode and listen on all interfaces
+    app.run(host='0.0.0.0', port=8080)
