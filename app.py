@@ -1,4 +1,4 @@
-from typing import List, Optional
+from typing import List, Optional, Union
 
 from flask import Flask, request, jsonify
 import joblib
