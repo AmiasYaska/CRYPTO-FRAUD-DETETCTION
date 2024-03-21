@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/b62dca5b0db84e4cbd5d039760d31521/artifacts
+end_time: 1711017571133
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: b62dca5b0db84e4cbd5d039760d31521
+run_name: clean-lamb-21
+run_uuid: b62dca5b0db84e4cbd5d039760d31521
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1711017550055
+status: 4
+tags: []
+user_id: HP

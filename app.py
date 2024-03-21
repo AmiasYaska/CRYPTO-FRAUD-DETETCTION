@@ -88,5 +88,4 @@ def predict():
         return jsonify({'error': str(e)}), 400
 
 if __name__ == '__main__':
-    # Use Gunicorn as the WSGI server in production
-    app.run()
+    app.run(port=5000, debug=True)
