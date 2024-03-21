@@ -1,11 +1,9 @@
-from ctypes import Union
-from typing import Optional
+from typing import List, Optional
 
 from flask import Flask, request, jsonify
 import joblib
 import pandas as pd
 from sklearn.base import TransformerMixin, BaseEstimator
-from sklearn.utils.validation import check_is_fitted
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LogisticRegression
 
@@ -17,10 +15,10 @@ lr_model = joblib.load("logistic_regression_model.pkl")
 class DataPrep(BaseEstimator, TransformerMixin):
     """Implementation preprocess dataset in several strategies"""
 
-    def __init__(self, num_feature_list: list, cat_feature_list: list, drop_feature_list: Optional[list] = None,
-                 cat_encoder_type: Union[str, list] = 'label', cat_min_count: int = 10,
+    def __init__(self, num_feature_list: List[str], cat_feature_list: List[str], drop_feature_list: Optional[List[str]] = None,
+                 cat_encoder_type: str = 'label', cat_min_count: int = 10,
                  fillna: Union[int, str] = 0, q_up_clip_outliers: Optional[float] = None,
-                 q_down_clip_outliers: Optional[float] = None, build_feature=False):
+                 q_down_clip_outliers: Optional[float] = None, build_feature: bool = False):
         """
             `num_feature_list` - list with num features name
             `cat_feature_list` - list with cat features name
