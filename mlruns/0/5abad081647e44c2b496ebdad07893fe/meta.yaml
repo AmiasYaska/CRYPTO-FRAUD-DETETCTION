@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/5abad081647e44c2b496ebdad07893fe/artifacts
+end_time: 1710850637231
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 5abad081647e44c2b496ebdad07893fe
+run_name: smiling-midge-97
+run_uuid: 5abad081647e44c2b496ebdad07893fe
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1710850573767
+status: 3
+tags: []
+user_id: HP

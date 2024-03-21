@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/93a71688988748d995d21d14b0aa6971/artifacts
+end_time: 1711013223741
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 93a71688988748d995d21d14b0aa6971
+run_name: fortunate-croc-346
+run_uuid: 93a71688988748d995d21d14b0aa6971
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1711013189904
+status: 3
+tags: []
+user_id: HP

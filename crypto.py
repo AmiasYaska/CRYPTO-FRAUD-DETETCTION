@@ -48,7 +48,7 @@ df[num_feature_list + ['FLAG']].corr()[['FLAG']]
 
 pairs = df[num_feature_list].corr().stack()
 pairs_list = list(pairs[pairs.abs().gt(0.9) & pairs.abs().lt(1.0)].index)
-print(int(len(pairs_list) / 2))
+# print(int(len(pairs_list) / 2))
 
 uniq_pairs_list = []
 
@@ -67,7 +67,7 @@ for feature in cat_feature_list:
 
 # train - test split
 
-df_train, df_test = train_test_split(df, test_size=0.1, random_state=0, stratify=df['FLAG'])
+df_train, df_test = train_test_split(df, test_size=0.2, random_state=0, stratify=df['FLAG'])
 df_train.shape[0], df_test.shape[0]
 
 # train - valid split (80 - 20)
@@ -239,7 +239,6 @@ mlflow.set_tracking_uri("http://127.0.0.1:5000/")  # Replace with your MLflow se
 
 
 with mlflow.start_run():
-    # Train a logistic regression model
     lr_model = LogisticRegression(max_iter=1000, random_state=0)
     lr_model.fit(df_train_prep, df_train['FLAG'])
 
