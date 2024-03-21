@@ -1,6 +1,3 @@
-from typing import List, Optional
-
-from _ctypes import Union
 from flask import Flask, request, jsonify
 import joblib
 import pandas as pd
@@ -16,16 +13,16 @@ lr_model = joblib.load("logistic_regression_model.pkl")
 class DataPrep(BaseEstimator, TransformerMixin):
     """Implementation preprocess dataset in several strategies"""
 
-    def __init__(self, num_feature_list: List[str], cat_feature_list: List[str], drop_feature_list: Optional[List[str]] = None,
-                 cat_encoder_type: str = 'label', cat_min_count: int = 10,
-                 fillna: Union[int, str] = 0, q_up_clip_outliers: Optional[float] = None,
-                 q_down_clip_outliers: Optional[float] = None, build_feature: bool = False):
+    def __init__(self, num_feature_list: list, cat_feature_list: list, drop_feature_list=None,
+                 cat_encoder_type='label', cat_min_count=10,
+                 fillna=0, q_up_clip_outliers=None,
+                 q_down_clip_outliers=None, build_feature=False):
         """
             `num_feature_list` - list with num features name
             `cat_feature_list` - list with cat features name
             `cat_encoder_type` - use `dummy` or `label` or both methods to encode features
             `drop_feature_list` - features to drop
-            `cat_min_count` - min count to separete category from `other` category
+            `cat_min_count` - min count to separate category from `other` category
             `fillna` - fill nans with 0, `mean` or `median` feature value
             `q_up_clip_outliers` - up quantile to clip outliers
             `q_down_clip_outliers` - down quantile to clip outliers
@@ -91,5 +88,5 @@ def predict():
         return jsonify({'error': str(e)}), 400
 
 if __name__ == '__main__':
-    # Run the app in production mode and listen on all interfaces
-    app.run(host='0.0.0.0', port=8080)
+    # Use Gunicorn as the WSGI server in production
+    app.run()
